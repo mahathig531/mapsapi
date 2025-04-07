@@ -13,6 +13,7 @@ Capture Map: Capture the current map view along with hotspots as a JPEG image.
 Download Annotated Image: The captured image will contain labeled hotspots.
 
 **Technologies Used**
+
 Frontend: React, Google Maps API, JavaScript
 
 Backend: Flask, OpenCV, Python
