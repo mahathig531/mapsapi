@@ -12,9 +12,9 @@ CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "http://127.0.
                              "allow_headers": ["Content-Type", "Authorization"]}}, supports_credentials=True)
 
 
-# Helper function to convert latitude and longitude to pixel coordinates
+# function to convert latitude and longitude to pixel coordinates
 def lat_lng_to_pixel(lat, lng, center_lat, center_lng, zoom):
-    scale = 2 ** zoom  # Google Maps scale factor
+    scale = 2 ** zoom  
     # World coordinate calculations
     def lat_to_y(lat):
         return (1 - math.log(math.tan(math.radians(lat)) + 1 / math.cos(math.radians(lat))) / math.pi) / 2 * 256 * scale
@@ -38,7 +38,7 @@ def lat_lng_to_pixel(lat, lng, center_lat, center_lng, zoom):
 def capture_map():
     try:
         data = request.get_json()
-        print("Received Data:", data)  # Print received data for debugging
+        print("Received Data:", data)  
         
         lat, lng, zoom = data['lat'], data['lng'], data['zoom']
         hotspots = data.get('hotspots', [])

@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+**Google Maps Hotspot Creator**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project allows users to search for a location on Google Maps, add hotspots by clicking on the map, and capture the map as an annotated image. The project uses React for the frontend and Flask as the backend, with the help of Google Maps API for map functionalities.
 
-## Available Scripts
+**Features**
 
-In the project directory, you can run:
+Search for a Location: Enter a place name and navigate to it on the map.
 
-### `npm start`
+Add Hotspots: Click on the map to add labeled hotspots.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Capture Map: Capture the current map view along with hotspots as a JPEG image.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Download Annotated Image: The captured image will contain labeled hotspots.
 
-### `npm test`
+**Technologies Used**
+Frontend: React, Google Maps API, JavaScript
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Backend: Flask, OpenCV, Python
 
-### `npm run build`
+API Services: Google Maps Static API, Google Geocoding API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tools: Git, GitHub, VS Code
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Setup and Installation**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**1. Clone the Repository**
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    git clone https://github.com/mahathig531/mapsapi.git
+    cd mapsapi
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**2. Google API Key Setup**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+You need to have a Google Maps API Key with the following enabled:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  Maps Static API
+  
+  Geocoding API
+  
+  Maps JavaScript API
+  
+  Places API
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Create a .env file in the frontend directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+    cd mapsapi
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Add the following to the .env file:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+    REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+Frontend Setup (React)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+Navigate to the client folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+    cd mapsapi
+
+
+**Install dependencies:**
+
+
+    npm install
+
+
+**Run the frontend:**
+
+
+    npm start
+
+
+**Open the app in your browser:**
+
+
+    http://localhost:3000
+
+
+**Backend Setup (Flask)**
+
+Open a new terminal and navigate to the server folder:
+
+    cd server
+
+**Create a virtual environment:**
+
+    python -m venv venv
+
+**Activate the virtual environment:**
+
+**Windows:**
+
+    venv\Scripts\activate
+
+**Mac/Linux:**
+
+    source venv/bin/activate
+
+**Install required packages:**
+
+    pip install -r requirements.txt
+
+**Run the Flask server:**
+
+    python app.py
+
+**The server will run on:**
+
+    http://localhost:8000
+
+**How to Use**
+
+Open the React application in your browser:
+
+    http://localhost:3000
+
+
+Search for a location using the input box and click Go.
+
+Add a hotspot by clicking on the map. You will be prompted to enter a label.
+
+Capture the map with hotspots by clicking the Capture Map button.
+
+The captured map with labeled hotspots will be downloaded as a JPEG image.
+
+

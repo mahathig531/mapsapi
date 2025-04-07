@@ -16,7 +16,7 @@ const center = {
 
 function App() {
   const [mapCenter, setMapCenter] = useState(center);
-  const [mapZoom, setMapZoom] = useState(12);  // Default zoom level
+  const [mapZoom, setMapZoom] = useState(12); 
   const [location, setLocation] = useState("");
   const [hotspots, setHotspots] = useState([]);
 
@@ -32,17 +32,17 @@ function App() {
         const locationType = data.results[0].types[0];
 
         // Adjust zoom level based on location type
-        let newZoom = 12;  // Default zoom for cities
+        let newZoom = 12; 
         if (locationType === "establishment" || locationType === "point_of_interest") {
-          newZoom = 16;  // Closer for specific places
+          newZoom = 16;  
         } else if (locationType === "locality" || locationType === "political") {
-          newZoom = 12;  // General zoom for cities
+          newZoom = 12;  
         } else {
-          newZoom = 14;  // Medium zoom for addresses
+          newZoom = 14;  
         }
 
         setMapCenter({ lat, lng });
-        setMapZoom(newZoom);  // Dynamically set zoom level
+        setMapZoom(newZoom); 
         console.log(`Location found: ${lat}, ${lng} with zoom: ${newZoom}`);
       } else {
         alert("Location not found!");
@@ -112,7 +112,7 @@ function App() {
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
           center={mapCenter}
-          zoom={mapZoom}  // Use the dynamically set zoom level
+          zoom={mapZoom} 
           onClick={addHotspot}
         >
           {hotspots.map((hotspot, index) => (
