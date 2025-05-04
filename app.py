@@ -7,7 +7,7 @@ from io import BytesIO
 import math
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "http://127.0.0.1:3000"], 
+CORS(app, resources={r"/*": {"origins": ["http://localhost:3001", "http://127.0.0.1:3001"], 
                              "methods": ["GET", "POST", "OPTIONS"], 
                              "allow_headers": ["Content-Type", "Authorization"]}}, supports_credentials=True)
 
@@ -48,7 +48,7 @@ def capture_map():
 
         # Proceed with the existing logic
         map_url = (
-            f"https://maps.googleapis.com/maps/api/staticmap?center={lat},{lng}&zoom={zoom}&size=600x600&key=AIzaSyCg1odmQXjofi1mstjxPNMTD8PRmbEx6Q0"
+            f"https://maps.googleapis.com/maps/api/staticmap?center={lat},{lng}&zoom={zoom}&size=600x600&maptype={map_type}&key=AIzaSyCg1odmQXjofi1mstjxPNMTD8PRmbEx6Q0"
         )
         response = requests.get(map_url)
 

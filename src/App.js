@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import { toPng } from 'html-to-image';
 
 // Map container styling
 const mapContainerStyle = {
@@ -16,7 +15,7 @@ const center = {
 
 function App() {
   const [mapCenter, setMapCenter] = useState(center);
-  const [mapZoom, setMapZoom] = useState(12); 
+  const [mapZoom, setMapZoom] = useState(10); 
   const [location, setLocation] = useState("");
   const [hotspots, setHotspots] = useState([]);
 
@@ -29,17 +28,19 @@ function App() {
       const data = await response.json();
       if (data.status === "OK" && data.results.length > 0) {
         const { lat, lng } = data.results[0].geometry.location;
+        console.log(data.results[0].geometry.location);
         const locationType = data.results[0].types[0];
 
         // Adjust zoom level based on location type
         let newZoom = 12; 
         if (locationType === "establishment" || locationType === "point_of_interest") {
-          newZoom = 16;  
+          newZoom = 16;  // was 16
         } else if (locationType === "locality" || locationType === "political") {
-          newZoom = 12;  
+          newZoom = 12;  // was 12
         } else {
-          newZoom = 14;  
+          newZoom = 8;  // was 8
         }
+        
 
         setMapCenter({ lat, lng });
         setMapZoom(newZoom); 
@@ -113,6 +114,7 @@ function App() {
           mapContainerStyle={mapContainerStyle}
           center={mapCenter}
           zoom={mapZoom} 
+          mapTypeId="satellite" 
           onClick={addHotspot}
         >
           {hotspots.map((hotspot, index) => (
