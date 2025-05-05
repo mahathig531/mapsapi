@@ -11,6 +11,7 @@
     "html-to-image": "^1.11.13",
     "mapbox-gl": "^3.10.0",
     "mapbox-gl-geocoder": "^2.0.1",
+<<<<<<< HEAD
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scripts": "^3.0.1",
@@ -19,6 +20,16 @@
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
+=======
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+>>>>>>> 5994987 (updated aerial view and street view)
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
