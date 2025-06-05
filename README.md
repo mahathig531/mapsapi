@@ -108,9 +108,10 @@ Open a new terminal and navigate to the server folder:
 
     pip install -r requirements.txt
 
-**Run the Flask server:**
+**Run the Backend server:**
 
-    python app.py
+    uvicorn main:app
+    
 
 **The server will run on:**
 
